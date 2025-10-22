@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <h1>Your Cart</h1>
+
+  {% if not cart %} 
+    <p>Your cart is empty.</p>
+    <a href="{{ url_for('buy') }}">Back to Buy</a>
+  {% else %}
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>Price (USD)</th>
+        <th>Qty</th>
+        <th>Subtotal</th>
+      </tr>
+      {% for item in cart %}
+      <tr>
+        <td>{{ item.symbol if item.symbol else item["symbol"] }}</td>
+        <td>{{ "%.2f"|format(item.price if item.price is defined else item["price"]) }}</td>
+        <td>{{ item.qty if item.qty is defined else item["qty"] }}</td>
+        <td>
+          {{ "%.2f"|format(
+               (item.price if item.price is defined else item["price"])
+               * (item.qty if item.qty is defined else item["qty"])
+          ) }}
+        </td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="3" style="text-align:right;"><strong>Total:</strong></td>
+        <td><strong>{{ "%.2f"|format(total) }}</strong></td>
+      </tr>
+    </table>
+
+    <p>
+      <a href="{{ url_for('buy') }}">Add more</a>
+    </p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <h1>Buy Stocks</h1>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Price (USD)</th>
+      <th></th>
+    </tr>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.symbol }}</td>
+      <td>{{ item.price }}</td>
+      <td>
+        <form class="buy-form" action="/cart" method="post">
+          <input type="hidden" name="symbol" value="{{ item.symbol }}">
+          <button data-price="{{ item.price }}" type="submit">Buy</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

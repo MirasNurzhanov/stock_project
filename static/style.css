@@ -1,0 +1,61 @@
+.box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.box p , a {
+    font-size: 50px;
+}
+
+.login{
+    display: block;
+    margin: 0 auto;
+}
+
+.login input , button {
+    font-size: 50px;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logout p , a {
+    font-size: 50px;
+}
+
+.register {
+    display: block;
+    margin: 0 auto;
+}
+
+.register input ,button {
+    font-size: 50px;
+}
+
+
+.error {
+  display: flex;
+  flex-direction: column;   /* stack children: h1 + a vertically */
+  justify-content: center;  /* center vertically inside the container */
+  align-items: center;      /* center horizontally inside container */
+  height: 100vh;            /* make container full height of viewport */
+  margin: 0;                 /* reset margins if needed */
+}
+
+.error h1 {
+  font-size: 60px;
+  margin: 0 0 20px;         /* some space below the heading before the link */
+}
+
+.error a {
+  text-decoration: none;
+  font-size: 24px;           /* adjust as you like */
+}
+
+.buy a {
+    font-size:60px;
+}

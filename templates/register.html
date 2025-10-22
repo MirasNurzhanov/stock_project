@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block body %}
+   <form class="register" action="/register" method="post">
+    <input autocomplete="off" name="user_name" type="text">
+    <input autcomplete="off" name="password" type="text">
+    <button type="submit">Register</button>
+   </form>
+{% endblock %}

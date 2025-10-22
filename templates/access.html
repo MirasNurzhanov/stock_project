@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+   {% if not user_name %}
+   <div class="box">
+       <p>You are not logged in: </p>
+       <a href="/login">Log In</a>
+       <a href="/register">Register</a>
+   </div>
+   {% else %}
+   <div class="logout">
+    <p>You are logged in as {{ user_name }}: </p>
+    <a href="/logout">Log Out</a>
+   </div>
+   <div class="buy">
+    <a href="/buy">Buy</a>
+   </div>
+   <div class="balance">
+    <h2>10,000</h2>
+   </div>
+    
+   {% endif %}
+{% endblock %}
